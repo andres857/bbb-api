@@ -20,17 +20,19 @@ let meetingCreateUrl = api.administration.create('testing rooms 10', meetingID, 
 
 let meetingCreate = async() =>{
   let url_meeting = await http(meetingCreateUrl)
-  if (url_meeting.returncode == 'SUCCESS'){
-    console.log('Meeting creado')
+  if (url_meeting.returncode == 'SUCCESS' ){
+
+     console.log('Meeting creado')
   }else{
-    console.log('Error creando el meeting');
+     console.log('Error creando el meeting');
   }
-  console.log(url_meeting)
   moderatorUrl = api.administration.join('moderator', url_meeting.meetingID, passAttendeePW)
   console.log(moderatorUrl);
+
 }
 
-meetingCreate()
+// meetingCreate()
+module.exports = meetingCreate
 
 
 
