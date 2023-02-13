@@ -6,10 +6,10 @@ const port = 3000
 // app use, call the middelwares
 app.use(express.json())
 
-
 app.get('/meetings/running', async(req,res)=>{
     let meetings = await getMeetings()
     res.send({
+        data: meetings,
         meetingsRunning: meetings.length
     })
 })
