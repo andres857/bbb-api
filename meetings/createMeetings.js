@@ -12,25 +12,26 @@ let meetingID = crypto.randomUUID()
 let passAttendeePW = 'invitedpass1234'
 let passModeratorPW = 'secreetpass'
 
-let meetingCreateUrl = api.administration.create('testing rooms 10', meetingID, {
+let meetingCreateUrl = api.administration.create('MyZoneGo Meetings', meetingID, {
   // duration: 1000,
   attendeePW: passAttendeePW,
   moderatorPW: passModeratorPW,
-  logoutURL: "https://myzonego.com/live",
-  welcome: "Welcome to your BigBlueButton meeting!",
+  logoutURL: "https://myzonego.com",
+  welcome: "Welcome to MyZoneGo!",
   allowStartStopRecording: "true",
   autoStartRecording: "false",
   record: "true",
-  lockSettingsDisablePublicChat: "true",
+  lockSettingsDisablePublicChat: "false",
   // bannerColor: "#FAE69E", 
   // bannerText: "Saludos coordiales",
-  muteOnStart: "true",
+  muteOnStart: "false",
   allowModsToUnmuteUsers: "true",
   allowModsToEjectCameras: "true",
 
-  remindRecordingIsOn: "true",
-  notifyRecordingIsOn: "true"
-  // meta_background: "https://www.myzonego.com/storage/tenant-8/W39xM43mUgiAJ6lpnqQg18onXkKizJiP49nwDeFD.jpg",
+  meetingLayout: 'PRESENTATION_FOCUS', // CUSTOM_LAYOUT, SMART_LAYOUT, PRESENTATION_FOCUS, VIDEO_FOCUS
+  learningDashboardCleanupDelayInMinutes: 0,
+  presentationUploadExternalDescription: 'Ejercicios Capitulo 1',
+  presentationUploadExternalUrl: 'https://bbb-assets.nyc3.cdn.digitaloceanspaces.com/Romms%20background.pdf',
 })
 
 const meetingCreate = async() =>{
@@ -44,14 +45,15 @@ const meetingCreate = async() =>{
   
   const kwParamsjoin = {
     "userdata-bbb_skip_check_audio": "true",
-    "userdata-bbb_show_public_chat_on_login": "false",
-    // "userdata-bbb_hide_nav_bar": "true"
-    "userdata-bbb_show_participants_on_login": "true",
+    "userdata-bbb_show_public_chat_on_login": "false", //esconde el chat
+    "userdata-bbb_hide_nav_bar": "false",// esconde el icono para mostrar o esconder el navbar de users
+    "userdata-bbb_show_participants_on_login": "false",// esconde el navbar al inicio de la session 
     "userdata-bbb_hide_actions_bar": "false",
-
+    "remindRecordingIsOn": "true",//pendiente por revisar
+    "notifyRecordingIsOn": "true",//pendiente por revisar
     "userdata-bbb_custom_style": `
     .sc-hZyDwR {
-      background-image: url(https://www.myzonego.com/storage/tenant-8/W39xM43mUgiAJ6lpnqQg18onXkKizJiP49nwDeFD.jpg);
+      background-image: url(https://bbb-assets.nyc3.cdn.digitaloceanspaces.com/backimagetest.jpg);
       background-size: cover; 
       border-left-width: 1px;
       border-color: grey;
@@ -63,6 +65,7 @@ const meetingCreate = async() =>{
     .irODRp{
       background-color: transparent ;
     }
+
     /* recording-description */
     .jsEDqp { 
       background-color: #0d4d9a ;
@@ -77,11 +80,57 @@ const meetingCreate = async() =>{
       font-weight: 600;
       color: #221212;
     }
+
     .cwAETT > span{
       box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-      background-color: #cfd2cde3 !important;
+      background-color: #d4d7d2 !important;
       border-width: 2px;
     }
+
+    /*
+    .cwAETT:hover > span{
+        background-color: yellow !important;
+    }
+    */
+
+    .cwAETT:active > span{
+      background-color: #EA6B23 !important;
+    }
+
+    /* Espanol */
+    :root #ActionsBar button:[aria-label="De-silenciar"] span {
+      background: #EA6B23 !important;
+    }
+  
+    :root #ActionsBar button:focus:not([aria-label="De-silenciar"]) span {
+        background: #EA6B23 !important;
+    }
+  
+    :root #ActionsBar button:[aria-label="Silenciar"] span {
+        background: #d4d7d2 !important;
+    }
+  
+    :root #ActionsBar button:focus:not([aria-label="Silenciar"]) span {
+        background: #d4d7d2 !important;
+    }
+
+    /* English */
+    :root #ActionsBar button:[aria-label="Unmute"] span {
+      background: #EA6B23 !important;
+    }
+  
+    :root #ActionsBar button:focus:not([aria-label="Unmute"]) span {
+        background: #EA6B23 !important;
+    }
+  
+    :root #ActionsBar button:[aria-label="Mute"] span {
+        background: #d4d7d2 !important;
+    }
+  
+    :root #ActionsBar button:focus:not([aria-label="Mute"]) span {
+        background: #d4d7d2 !important;
+    }
+
     .jeAcue > span {
       background-color: #EE0056
     }
@@ -93,7 +142,7 @@ const meetingCreate = async() =>{
     }`
   };
 
-  moderatorUrl = api.administration.join('adminandres', url_meeting.meetingID, passModeratorPW,kwParamsjoin)
+  moderatorUrl = api.administration.join('adminandres', url_meeting.meetingID, passModeratorPW, kwParamsjoin)
   // attendeeUrl = api.administration.join('invitenandres', url_meeting.meetingID, passAttendeePW,kwParamsjoin )
   // console.log(`Moderator link: ${moderatorUrl}\nAttendee link: ${attendeeUrl}`)
   console.log(`Moderator link: ${moderatorUrl}`)
@@ -102,33 +151,3 @@ const meetingCreate = async() =>{
 
 meetingCreate()
 module.exports = meetingCreate
-
-
-// .jkgjts{
-    //   background-color: #EE0056 !important
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// http(meetingCreateUrl).then((result) => {
- 
-//   let moderatorUrl = api.administration.join('moderator', meetingID, passAttendeePW)
-//   let attendeeUrl = api.administration.join('attendee', meetingID, passModeratorPW)
-//   console.log(`Moderator link: ${moderatorUrl}\nAttendee link: ${attendeeUrl}`)
- 
-//   let meetingEndUrl = api.administration.end(meetingID, passModeratorPW)
-//   console.log(`End meeting link: ${meetingEndUrl}`)
-//   console.log(result)
-// })
