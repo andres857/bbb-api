@@ -81,65 +81,35 @@ const meetingCreate = async() =>{
       color: #221212;
     }
 
-    .cwAETT > span{
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    /* More Actions */
+    .buttonWrapper[aria-label="Actions"] span{
+      background-color: yellow;
+    }
+
+    /* Audio */
+    .buttonWrapper[aria-label="Leave audio"] span{
+      background-color: red;
+    }
+    .buttonWrapper[aria-label="Leave audio"][data-test="leaveListenOnly"] span:hover{
+      background-color: red !important;
+    }
+
+    /* Web Cam */
+    .buttonWrapper[aria-label="Share webcam"][data-test="joinVideo"] span:hover{
       background-color: #d4d7d2 !important;
-      border-width: 2px;
     }
-
-    /*
-    .cwAETT:hover > span{
-        background-color: yellow !important;
+    .buttonWrapper[aria-label="Stop sharing webcam"][data-test="leaveVideo"] span{
+      background-color: green !important;
     }
-    */
-
-    .cwAETT:active > span{
-      background-color: #EA6B23 !important;
+    
+    /* Manage Presentation */
+    .buttonWrapper[aria-label="Minimize presentation"] span{
+      background-color: orange;
     }
-
-    /* Espanol */
-    :root #ActionsBar button:[aria-label="De-silenciar"] span {
-      background: #EA6B23 !important;
+    .buttonWrapper[aria-label="Share your screen"][data-test="startScreenShare"] span:hover{
+      background-color: #d4d7d2 !important;
     }
-  
-    :root #ActionsBar button:focus:not([aria-label="De-silenciar"]) span {
-        background: #EA6B23 !important;
-    }
-  
-    :root #ActionsBar button:[aria-label="Silenciar"] span {
-        background: #d4d7d2 !important;
-    }
-  
-    :root #ActionsBar button:focus:not([aria-label="Silenciar"]) span {
-        background: #d4d7d2 !important;
-    }
-
-    /* English */
-    :root #ActionsBar button:[aria-label="Unmute"] span {
-      background: #EA6B23 !important;
-    }
-  
-    :root #ActionsBar button:focus:not([aria-label="Unmute"]) span {
-        background: #EA6B23 !important;
-    }
-  
-    :root #ActionsBar button:[aria-label="Mute"] span {
-        background: #d4d7d2 !important;
-    }
-  
-    :root #ActionsBar button:focus:not([aria-label="Mute"]) span {
-        background: #d4d7d2 !important;
-    }
-
-    .jeAcue > span {
-      background-color: #EE0056
-    }
-    .jeAcue:hover > span {
-      background-color: #EE0056 
-    }
-    .jkgjts:focus, .buttonWrapper:focus[data-test="leaveVideo"].jkgjts{
-      background-color: green
-    }`
+    `
   };
 
   moderatorUrl = api.administration.join('adminandres', url_meeting.meetingID, passModeratorPW, kwParamsjoin)
