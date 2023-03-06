@@ -83,31 +83,51 @@ const meetingCreate = async() =>{
 
     /* More Actions */
     .buttonWrapper[aria-label="Actions"] span{
-      background-color: yellow;
+      background-color: #EE0056 !important;
+    }
+
+    .buttonWrapper[aria-label="Actions"] span:hover{
+      background-color: #EE0056 !important;
     }
 
     /* Audio */
+    .buttonWrapper[aria-label="Mute"][data-test="muteMicButton"] span{
+      background-color: #EA6B23 !important;
+    }
+    .buttonWrapper[aria-label="Mute"][data-test="muteMicButton"] span:hover{
+      background-color: #EA6B23 !important;
+    }
     .buttonWrapper[aria-label="Leave audio"] span{
-      background-color: red;
+      background-color: #EE0056 !important;
     }
     .buttonWrapper[aria-label="Leave audio"][data-test="leaveListenOnly"] span:hover{
-      background-color: red !important;
+      background-color: #EE0056 !important;
     }
 
     /* Web Cam */
     .buttonWrapper[aria-label="Share webcam"][data-test="joinVideo"] span:hover{
-      background-color: #d4d7d2 !important;
+      background-color: #cfd2cd !important;
     }
     .buttonWrapper[aria-label="Stop sharing webcam"][data-test="leaveVideo"] span{
-      background-color: green !important;
+      background-color: #46DD38 !important;
     }
     
+    /* Share screen*/
+    .buttonWrapper[aria-label="Share your screen"][data-test="startScreenShare"] span:hover{
+      background-color: #cfd2cd !important;
+    }
+
     /* Manage Presentation */
     .buttonWrapper[aria-label="Minimize presentation"] span{
-      background-color: orange;
+      background-color: #EE0056;
     }
-    .buttonWrapper[aria-label="Share your screen"][data-test="startScreenShare"] span:hover{
-      background-color: #d4d7d2 !important;
+    .buttonWrapper[aria-label="Minimize presentation"] span:hover{
+      background-color: #EE0056 !important;
+    }
+
+    /* Rise Hand*/
+    .buttonWrapper[aria-label="Raise hand"][data-test="raiseHandLabel"] span:hover{
+      background-color: #cfd2cd !important;
     }
     `
   };
