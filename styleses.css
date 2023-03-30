@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); 
+
+body {
+  font-family: 'Roboto', 'Source Sans Pro', Arial, sans-serif;
+}
+
+.bodyVw{
+  background-color: transparent ;
+}
+
+.irODRp{
+  background-color: transparent ;
+}
+
+/* recording-description */
+.jsEDqp { 
+  background-color: #0d4d9a ;
+  border-color: #227C9D ;
+  padding: 7px 13px 7px 9px;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+.jsEDqp span {
+  font-weight: bold;
+}
+.dcDKgv {
+  font-weight: 600;
+  color: #221212;
+}
+
+/* More Actions */
+.buttonWrapper[aria-label="Actions"] span{
+  background-color: #EE0056 !important;
+}
+
+.buttonWrapper[aria-label="Actions"] span:hover{
+  background-color: #EE0056 !important;
+}
+
+/* Audio */
+.buttonWrapper[aria-label="Mute"][data-test="muteMicButton"] span{
+  background-color: #EA6B23 !important;
+}
+.buttonWrapper[aria-label="Mute"][data-test="muteMicButton"] span:hover{
+  background-color: #EA6B23 !important;
+}
+.buttonWrapper[aria-label="Leave audio"] span{
+  background-color: #EE0056 !important;
+}
+.buttonWrapper[aria-label="Leave audio"][data-test="leaveListenOnly"] span:hover{
+  background-color: #EE0056 !important;
+}
+
+/* Web Cam */
+.buttonWrapper[aria-label="Share webcam"][data-test="joinVideo"] span:hover{
+  background-color: #cfd2cd !important;
+}
+.buttonWrapper[aria-label="Stop sharing webcam"][data-test="leaveVideo"] span{
+  background-color: #46DD38 !important;
+}
+
+/* Share screen*/
+.buttonWrapper[aria-label="Share your screen"][data-test="startScreenShare"] span:hover{
+  background-color: #cfd2cd !important;
+}
+
+/* Manage Presentation */
+.buttonWrapper[aria-label="Minimize presentation"] span{
+  background-color: #EE0056;
+}
+.buttonWrapper[aria-label="Minimize presentation"] span:hover{
+  background-color: #EE0056 !important;
+}
+
+/* Rise Hand*/
+.buttonWrapper[aria-label="Raise hand"][data-test="raiseHandLabel"] span:hover{
+  background-color: #cfd2cd !important;
+}
+
+/* More Actions ES */ 
+.buttonWrapper[aria-label="Acciones"] span{
+  background-color: #EE0056 !important;
+}
+
+.buttonWrapper[aria-label="Acciones"] span:hover{
+  background-color: #EE0056 !important;
+}
+
+/* Audio ES*/
+.buttonWrapper[aria-label="Deshabilitar audio"][data-test="muteMicButton"] span{
+  background-color: #EA6B23 !important;
+}
+.buttonWrapper[aria-label="Deshabilitar audio"][data-test="muteMicButton"] span:hover{
+  background-color: #EA6B23 !important;
+}
+.buttonWrapper[aria-label="Leave audio"] span{
+  background-color: #EE0056 !important;
+}
+.buttonWrapper[aria-label="Leave audio"][data-test="leaveListenOnly"] span:hover{
+background-color: #EE0056 !important;
+}
+
+/* Web Cam ES*/
+.buttonWrapper[aria-label="Share webcam"][data-test="joinVideo"] span:hover{
+  background-color: #cfd2cd !important;
+}
+.buttonWrapper[aria-label="Dejar de compartir webcam"][data-test="leaveVideo"] span{
+  background-color: #46DD38 !important;
+}
+
+/* Share screen ES*/
+.buttonWrapper[aria-label="Compartir tu pantalla"][data-test="startScreenShare"] span:hover{
+  background-color: #cfd2cd !important;
+}
+/* Manage Presentation ES*/
+.buttonWrapper[aria-label="Minimizar presentación"] span{
+  background-color: #EE0056;
+}
+.buttonWrapper[aria-label="Minimizar presentación"] span:hover{
+  background-color: #EE0056 !important;
+}
+/* Rise Hand ES*/
+.buttonWrapper[aria-label="Levantar la mano"][data-test="raiseHandLabel"] span:hover{
+  background-color: #cfd2cd !important;
+}
+
+button[data-test="customLayout"]{
+    background-color: rgb(222, 12, 204);
+    color: white;
+}

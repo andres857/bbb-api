@@ -51,84 +51,80 @@ const meetingCreate = async() =>{
     "userdata-bbb_hide_actions_bar": "false",
     "remindRecordingIsOn": "true",//pendiente por revisar
     "notifyRecordingIsOn": "true",//pendiente por revisar
+    // "userdata-bbb_custom_style_url": "https://bbb-assets.nyc3.cdn.digitaloceanspaces.com/v2.6%2Fstyles26.css",
     "userdata-bbb_custom_style": `
-    .sc-hZyDwR {
-      background-image: url(https://bbb-assets.nyc3.cdn.digitaloceanspaces.com/backimagetest.jpg);
-      background-size: cover; 
+    #layout{
+      background-size: cover;
       border-left-width: 1px;
       border-color: grey;
       border-left-style: solid;
+      background-image: url(https://bbb-assets.nyc3.cdn.digitaloceanspaces.com/Litmus-Cross-stitch-Zoom.png);
     }
-    .bodyVw{
-      background-color: transparent ;
+    .fBCzXv{
+      background-color: transparent;
     }
-    .irODRp{
-      background-color: transparent ;
+    .cwPRvw{
+      background-color: transparent;
     }
-
     /* recording-description */
-    .jsEDqp { 
+    .hAlawd { 
       background-color: #0d4d9a ;
       border-color: #227C9D ;
-      padding: 7px 13px 7px 9px;
+      padding: 12px 17px;
       box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     }
-    .jsEDqp span {
+    .gPhyOv span {
       font-weight: bold;
     }
-    .dcDKgv {
-      font-weight: 600;
-      color: #221212;
+    .kxUSjt {
+      font-weight: 800;
+      color:#ffffff;
+    }
+    .cwAETT > span{
+      background-color: #cfd2cd !important;
+      border: 2px solid white !important;
+    }
+    .cwAETT > span:hover{
+      background-color: #c3c3c2 !important;
     }
 
     /* More Actions */
-    .buttonWrapper[aria-label="Actions"] span{
+    .buttonWrapper[data-test="actionsButton"] span{
       background-color: #EE0056 !important;
     }
 
-    .buttonWrapper[aria-label="Actions"] span:hover{
+    .buttonWrapper[data-test="actionsButton"] span:hover{
       background-color: #EE0056 !important;
     }
-
-    /* Audio */
-    .buttonWrapper[aria-label="Mute"][data-test="muteMicButton"] span{
+    /*Audio*/
+    .buttonWrapper[data-test="muteMicButton"] span{
       background-color: #EA6B23 !important;
     }
-    .buttonWrapper[aria-label="Mute"][data-test="muteMicButton"] span:hover{
+    .buttonWrapper[data-test="muteMicButton"] span:hover{
       background-color: #EA6B23 !important;
     }
-    .buttonWrapper[aria-label="Leave audio"] span{
-      background-color: #EE0056 !important;
+    .buttonWrapper[data-test="leaveListenOnly"] span{
+      background-color: #EA6B23 !important;
     }
-    .buttonWrapper[aria-label="Leave audio"][data-test="leaveListenOnly"] span:hover{
-      background-color: #EE0056 !important;
+    .buttonWrapper[data-test="leaveListenOnly"] span:hover{
+      background-color: #EA6B23 !important;
     }
-
     /* Web Cam */
-    .buttonWrapper[aria-label="Share webcam"][data-test="joinVideo"] span:hover{
-      background-color: #cfd2cd !important;
-    }
-    .buttonWrapper[aria-label="Stop sharing webcam"][data-test="leaveVideo"] span{
+    .buttonWrapper[data-test="leaveVideo"] span{
       background-color: #46DD38 !important;
     }
-    
-    /* Share screen*/
-    .buttonWrapper[aria-label="Share your screen"][data-test="startScreenShare"] span:hover{
-      background-color: #cfd2cd !important;
+    .jkgjts:active, .jkgjts:focus{
+      outline: #6e6e6e solid 2px !important;
     }
-
-    /* Manage Presentation */
-    .buttonWrapper[aria-label="Minimize presentation"] span{
-      background-color: #EE0056;
-    }
-    .buttonWrapper[aria-label="Minimize presentation"] span:hover{
-      background-color: #EE0056 !important;
-    }
-
-    /* Rise Hand*/
-    .buttonWrapper[aria-label="Raise hand"][data-test="raiseHandLabel"] span:hover{
-      background-color: #cfd2cd !important;
-    }
+    header[id="Navbar"] {
+      background-color: #ffffff00 !important;
+  }
+  section[id="ActionsBar"] {
+    background-color: #ffffff00 !important;
+  }
+  div[data-test="presentationContainer"] {
+    background-color: #ffffff00 !important;
+  }
     `
   };
 
